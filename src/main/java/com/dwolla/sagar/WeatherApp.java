@@ -9,9 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 public class WeatherApp {
     public static void main(String[] args) throws Exception {
-        ApiKey myKeyObject;
-
-        myKeyObject = new ApiKey();
+        ApiKey myKeyObject = ApiKey.getInstance();
 
         String apiKey = myKeyObject.getKey();
 

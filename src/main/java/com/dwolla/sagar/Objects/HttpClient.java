@@ -8,9 +8,9 @@ public class HttpClient {
 
     private String url;
 
-    WebTarget target;
+    private WebTarget target;
 
-    Client client = ClientBuilder.newClient();
+    private Client client = ClientBuilder.newClient();
 
     public WebTarget getTarget() {
         return target;
