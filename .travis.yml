@@ -1,7 +1,4 @@
 language: java
-jdk:
-- oraclejdk7
-- oraclejdk8
-- oraclejdk9
-script: mvn clean verify
-sudo: false
+install: true
+script:
+- mvn install
