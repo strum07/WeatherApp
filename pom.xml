@@ -5,7 +5,6 @@
 
     <groupId>com.dwolla.sagar</groupId>
     <artifactId>WeatherApp</artifactId>
-    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>WeatherApp</name>
 
@@ -30,11 +29,12 @@
             <dependency>
                 <groupId>org.glassfish.jersey</groupId>
                 <artifactId>jersey-bom</artifactId>
-                <version>${jersey.version}</version>
+                <version>2.27</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <dependencies>
@@ -53,6 +53,14 @@
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-binding</artifactId>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client -->
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>2.27</version>
+        </dependency>
+
 
     </dependencies>
     <properties>
