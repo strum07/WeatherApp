@@ -1,11 +1,10 @@
-package com.dwolla.sagar;
+package com.dwolla.sagar.ApiKeyGen;
 
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class ExtractKey {
-
+public class FetchKey {
     private static String readFileAsString(String fileName)throws Exception
     {
         return new String(Files.readAllBytes(Paths.get(fileName)));
