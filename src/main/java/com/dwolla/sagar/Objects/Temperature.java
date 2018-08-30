@@ -19,9 +19,9 @@ public class Temperature {
         return  Math.round(celsius * 100.0) / 100.0;
     }
 
-    public double getFarenheit() {
+    public double getFahrenheit() {
         fahrenheit = 1.8*(kelvin-273)+32;
-        return fahrenheit;
+        return Math.round(fahrenheit * 100.0) / 100.0;
     }
 
 }

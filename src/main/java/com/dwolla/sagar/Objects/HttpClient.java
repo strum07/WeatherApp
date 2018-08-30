@@ -7,10 +7,10 @@ import javax.ws.rs.client.WebTarget;
 public class HttpClient {
 
     private String url;
+
     WebTarget target;
 
     Client client = ClientBuilder.newClient();
-
 
     public WebTarget getTarget() {
         return target;
@@ -20,7 +20,4 @@ public class HttpClient {
         this.url = myUrl.getPrepUrl();
         target = client.target(url);
     }
-
-
-
 }
