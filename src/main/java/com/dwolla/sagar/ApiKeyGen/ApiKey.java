@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 public class ApiKey {
 
-    //This is the path we will store our key in a local file named Key.txt
+
 
     private static ApiKey instance = null;
 
