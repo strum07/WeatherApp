@@ -20,7 +20,8 @@ public class App {
         System.out.println(apiKey);
         UrlParams myParams = new UrlParams();
 
-        myParams.setCityName("Bangalore");
+        myParams.setCityName("Chicago");
+
 
         Url myUrl = new Url( myParams,myKeyObject );
 
@@ -33,11 +34,16 @@ public class App {
 
         System.out.println("See this for JSON!!!");
 
+
         String x = myClient.getTarget().request(MediaType.APPLICATION_JSON).get(String.class);
+
+        //JSONObject x = myClient.getTarget().request(MediaType.APPLICATION_JSON).get(JSONObject.class);
         System.out.println(x);
 
         JSONObject json = new JSONObject(x);
 
+       // JSONObject y = (JSONObject) json.get("main");
+        //JSONObject y = (JSONObject) json.get("main");
         JSONObject y = (JSONObject) json.get("main");
 
         System.out.println(y);

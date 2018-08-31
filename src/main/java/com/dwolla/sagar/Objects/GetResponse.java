@@ -39,4 +39,12 @@ public class GetResponse {
 
         extractedTemp =  BigDecimal.valueOf(nestedResponse.getDouble("temp")).doubleValue();
      }
+
+
+    public String getStringResponse(HttpClient myClient){
+
+        String rawResponse = myClient.getTarget().request(MediaType.APPLICATION_JSON).get(String.class);
+
+        return rawResponse;
+    }
 }
