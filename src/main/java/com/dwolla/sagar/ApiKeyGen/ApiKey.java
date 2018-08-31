@@ -15,10 +15,8 @@ public class ApiKey {
         return new String(Files.readAllBytes(Paths.get(fileName)));
     }
 
-
     protected ApiKey() throws Exception {
         // Exists only to defeat instantiation. #SingletonPattern!
-
     }
 
     public static ApiKey getInstance() throws Exception {

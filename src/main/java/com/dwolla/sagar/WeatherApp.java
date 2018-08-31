@@ -1,6 +1,6 @@
 package com.dwolla.sagar;
 
-import com.dwolla.sagar.Models.TemperatureData;
+import com.dwolla.sagar.Models.DataModel.TemperatureData;
 import com.dwolla.sagar.Objects.*;
 import org.json.JSONObject;
 import com.dwolla.sagar.ApiKeyGen.ApiKey;

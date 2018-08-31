@@ -1,16 +1,14 @@
-package com.dwolla.sagar.Models;
+package com.dwolla.sagar.Models.DataModel;
 
-public class TemperatureData extends WeatherData {
+public class TemperatureData {
 
     private double kelvin;
     private double celsius;
     private double fahrenheit;
 
-
     public void setKelvin(double kelvin) {
         this.kelvin = kelvin;
     }
-
 
     public double getKelvin() {
         return kelvin;

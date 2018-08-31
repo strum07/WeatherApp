@@ -7,7 +7,6 @@ import javax.ws.rs.client.WebTarget;
 public class HttpClient {
 
     private String url;
-
     private WebTarget target;
 
     private Client client = ClientBuilder.newClient();

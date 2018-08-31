@@ -6,10 +6,10 @@ import java.math.BigDecimal;
 
 public class GetResponse {
 
-    JSONObject response;
-    JSONObject nestedResponse;
-    Double extractedTemp;
-    HttpClient myClient;
+    private JSONObject response;
+    private JSONObject nestedResponse;
+    private Double extractedTemp;
+    private HttpClient myClient;
 
     public void setMyClient(HttpClient myClient) {
         this.myClient = myClient;
