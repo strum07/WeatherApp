@@ -18,7 +18,7 @@ public class FormatInput {
 
     private List<String> getTokens(String str) {
         List<String> tokens = new ArrayList<>();
-        StringTokenizer tokenizer = new StringTokenizer(str, " ");
+        StringTokenizer tokenizer = new StringTokenizer(str, " ,./");
         while (tokenizer.hasMoreElements()) {
             tokens.add(tokenizer.nextToken().toLowerCase());
         }
@@ -40,19 +40,17 @@ public class FormatInput {
         int lastIndex = tokenList.size()-1;
         if(tokenList.size()>1){
             int numberOfCharLastIndex = tokenList.get(lastIndex).length();
-            System.out.println("Reaching 0");
+
             //if country is entered
             if(numberOfCharLastIndex == 2){
                 formatInputList.add(concatTokens(tokenList.subList(0,tokenList.size()-1)));
                 formatInputList.add(tokenList.get(lastIndex));
-                System.out.println("Reaching 1");
+
             }else{
                 formatInputList.add(concatTokens(tokenList.subList(0,tokenList.size())));
-                System.out.println("Reaching 2");
             }
         }else{
             formatInputList.add(concatTokens(tokenList.subList(0,tokenList.size())));
-            System.out.println("Reaching 3");
         }
         return formatInputList;
     }

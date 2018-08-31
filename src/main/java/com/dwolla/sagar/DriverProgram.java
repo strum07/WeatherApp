@@ -9,8 +9,6 @@ import java.io.InputStreamReader;
 public class DriverProgram {
 
     public static void main(String[] args) throws IOException {
-        System.out.println("Start");
-
         String rawInput;
 
         WeatherHelper weatherMan;
@@ -24,7 +22,5 @@ public class DriverProgram {
         weatherMan = new WeatherHelper(rawInput);
 
         weatherMan.serveWeather();
-
-        System.out.println("End");
     }
 }
