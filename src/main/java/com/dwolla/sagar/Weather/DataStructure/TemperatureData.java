@@ -1,4 +1,4 @@
-package com.dwolla.sagar.Weather;
+package com.dwolla.sagar.Weather.DataStructure;
 
 public class TemperatureData {
 

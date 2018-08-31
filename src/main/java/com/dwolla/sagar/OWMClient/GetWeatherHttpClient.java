@@ -9,7 +9,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.math.BigDecimal;
 
-public class GetWeatherClient {
+public class GetWeatherHttpClient {
 
     private ApiKey apiKeyInstance = ApiKey.getInstance();
     private String APPID;
@@ -18,12 +18,12 @@ public class GetWeatherClient {
 
 
     //Constructor
-    public GetWeatherClient(String City) throws Exception {
+    public GetWeatherHttpClient(String City) throws Exception {
         this.city = City;
         this.countryCode = null;
     }
 
-    public GetWeatherClient(String City,String CountryCode) throws Exception {
+    public GetWeatherHttpClient(String City, String CountryCode) throws Exception {
         this.city = City;
         this.countryCode = CountryCode;
     }

@@ -25,17 +25,17 @@ public class WeatherHelper {
             List<String> paramList = inputParams.getFormattedInputList();
 
             if(paramList.size()==1){
-                WeatherApp myApp = null;
+                WeatherService myApp = null;
                 try {
-                    myApp = new WeatherApp(paramList.get(0));
+                    myApp = new WeatherService(paramList.get(0));
                     myApp.displayWeather();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }else if(paramList.size()==2){
-                WeatherApp myApp = null;
+                WeatherService myApp = null;
                 try {
-                    myApp = new WeatherApp(paramList.get(0), paramList.get(1));
+                    myApp = new WeatherService(paramList.get(0), paramList.get(1));
                     myApp.displayWeather();
                 } catch (Exception e) {
                     e.printStackTrace();
