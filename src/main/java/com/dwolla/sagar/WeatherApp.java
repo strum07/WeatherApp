@@ -1,15 +1,10 @@
 package com.dwolla.sagar;
 
-import com.dwolla.sagar.Models.DataModel.TemperatureData;
-import com.dwolla.sagar.Models.DataModel.WeatherDataModel;
-import com.dwolla.sagar.Objects.*;
-import org.json.JSONObject;
-import com.dwolla.sagar.ApiKeyGen.ApiKey;
-import javax.ws.rs.core.MediaType;
+import com.dwolla.sagar.Weather.WeatherData;
 
 public class WeatherApp {
 
-    private WeatherDataModel weatherdata;
+    private WeatherData weatherdata;
 
     private String city;
 
@@ -20,7 +15,7 @@ public class WeatherApp {
 
 
     public void displayWeather(){
-
+        System.out.println("Hey!Chicago");
     }
 
 

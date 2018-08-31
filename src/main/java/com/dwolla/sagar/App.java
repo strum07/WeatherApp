@@ -1,7 +1,7 @@
 package com.dwolla.sagar;
 
 import com.dwolla.sagar.ApiKeyGen.ApiKey;
-import com.dwolla.sagar.Models.DataModel.TemperatureData;
+import com.dwolla.sagar.Weather.TemperatureData;
 import com.dwolla.sagar.Objects.GetResponse;
 import com.dwolla.sagar.Objects.HttpClient;
 import com.dwolla.sagar.Objects.Url;

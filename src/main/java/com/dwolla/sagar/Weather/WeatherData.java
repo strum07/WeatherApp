@@ -1,6 +1,6 @@
-package com.dwolla.sagar.Models.DataModel;
+package com.dwolla.sagar.Weather;
 
-public class WeatherDataModel implements DataModel {
+public class WeatherData {
 
     private TemperatureData temperatureData;
 

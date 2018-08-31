@@ -1,7 +1,6 @@
 package com.dwolla.sagar;
 
-import com.dwolla.sagar.Models.DataModel.TemperatureData;
-
+import com.dwolla.sagar.Weather.TemperatureData;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,14 +11,11 @@ public class DriverProgram {
 
         String city = null;
 
-
-
         System.out.println("Where are you?");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         city = reader.readLine();
-
         if(city.isEmpty()){
             System.out.println(city);
             System.out.println("Please enter a city and try again!");
@@ -32,7 +28,6 @@ public class DriverProgram {
             WeatherApp myApp = new WeatherApp("City");
             myApp.displayWeather();
         }
-
         System.out.println("End");
     }
 }

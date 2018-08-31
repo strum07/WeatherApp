@@ -1,4 +1,4 @@
-package com.dwolla.sagar.Models.DataModel;
+package com.dwolla.sagar.Weather;
 
 public class TemperatureData {
 
