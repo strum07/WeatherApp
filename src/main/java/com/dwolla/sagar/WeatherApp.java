@@ -27,7 +27,13 @@ public class WeatherApp {
 
 
     public void displayWeather(){
-        System.out.println(myCity +" Weather:");
+        if(myCountryCode.isEmpty()){
+            System.out.println(myCity +" Weather:");
+        }else{
+            System.out.println(myCity +" "+myCountryCode+" Weather:");
+
+        }
         System.out.println(myCityWeatherData.getTemperatureData().getFahrenheit()+" degrees Fahrenheit"+"");
+
     }
 }

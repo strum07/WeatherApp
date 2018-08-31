@@ -8,7 +8,7 @@ public class ApiKey {
 
     private static ApiKey instance = null;
     private final String path = new File("src/main/java/environment/Key.txt").getAbsolutePath();
-    private String key = readFileAsString(path);
+    private final String key = readFileAsString(path);
 
     private static String readFileAsString(String fileName)throws Exception
     {
