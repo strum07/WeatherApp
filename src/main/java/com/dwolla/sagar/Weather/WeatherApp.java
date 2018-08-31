@@ -1,7 +1,6 @@
 package com.dwolla.sagar.Weather;
 
 import com.dwolla.sagar.OWMClient.GetWeatherClient;
-import com.dwolla.sagar.Weather.WeatherData;
 
 public class WeatherApp {
 
@@ -28,12 +27,16 @@ public class WeatherApp {
 
     public void displayWeather(){
         if(myCountryCode==null){
-            System.out.println(myCity +" Weather:");
+            System.out.println(capitalizeFirstLetterOfWord(myCity) +" Weather:");
         }else{
-            System.out.println(myCity +" "+myCountryCode+" Weather:");
+            System.out.println(capitalizeFirstLetterOfWord(myCity) +" "+myCountryCode.toUpperCase()+" Weather:");
 
         }
         System.out.println(myCityWeatherData.getTemperatureData().getFahrenheit()+" degrees Fahrenheit"+"");
 
+    }
+
+    private String capitalizeFirstLetterOfWord(String string){
+        return string.substring(0, 1).toUpperCase() + string.substring(1);
     }
 }

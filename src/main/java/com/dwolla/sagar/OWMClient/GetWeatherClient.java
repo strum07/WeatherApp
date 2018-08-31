@@ -62,9 +62,7 @@ public class GetWeatherClient {
     }
 
     public double tempInKelvin(){
-
         return extractTemperature(getResponseString());
-
     }
 
 
