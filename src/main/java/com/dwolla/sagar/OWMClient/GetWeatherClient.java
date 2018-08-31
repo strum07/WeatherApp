@@ -13,16 +13,21 @@ public class GetWeatherClient {
 
     private ApiKey apiKeyInstance = ApiKey.getInstance();
     private String APPID;
-    private String prepUrl;
     private String city;
-    private String responseString;
-    private double kelvin;
+    private String countryCode;
 
 
     //Constructor
     public GetWeatherClient(String City) throws Exception {
         this.city = City;
     }
+
+    public GetWeatherClient(String City,String CountryCode) throws Exception {
+        this.city = City;
+        this.countryCode = CountryCode;
+    }
+
+
 
     private void setAPPID(ApiKey apiKeyInstance) {
         this.APPID = apiKeyInstance.getKey();
@@ -31,16 +36,20 @@ public class GetWeatherClient {
     private String getPrepUrl(){
         setAPPID(apiKeyInstance);
         String targetUrl = "http://api.openweathermap.org/data/2.5/weather";
-        return prepUrl = targetUrl +"?q="+city+"&APPID="+APPID;
+
+        if(countryCode.isEmpty()){
+            return targetUrl +"?q="+city+"&APPID="+APPID;
+        } else{
+          return targetUrl +"?q="+city+","+countryCode+"&APPID="+APPID;
+        }
     }
 
     private String getResponseString(){
 
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(getPrepUrl());
-        responseString = target.request(MediaType.APPLICATION_JSON).get(String.class);
-        
-        return responseString;
+
+        return target.request(MediaType.APPLICATION_JSON).get(String.class);
     }
 
     private double extractTemperature(String responseString){
@@ -51,12 +60,9 @@ public class GetWeatherClient {
         return BigDecimal.valueOf(mainResponse.getDouble("temp")).doubleValue();
     }
 
-    //WeatherApp - Perhaps?
     public double tempInKelvin(){
 
-
-
-        return kelvin;
+        return extractTemperature(getResponseString());
 
     }
 

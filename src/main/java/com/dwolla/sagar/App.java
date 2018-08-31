@@ -2,10 +2,10 @@ package com.dwolla.sagar;
 
 import com.dwolla.sagar.ApiKeyGen.ApiKey;
 import com.dwolla.sagar.Weather.TemperatureData;
-import com.dwolla.sagar.Objects.GetResponse;
-import com.dwolla.sagar.Objects.HttpClient;
-import com.dwolla.sagar.Objects.Url;
-import com.dwolla.sagar.Objects.UrlParams;
+import com.dwolla.sagar.aajunk.GetResponse;
+import com.dwolla.sagar.aajunk.HttpClient;
+import com.dwolla.sagar.aajunk.Url;
+import com.dwolla.sagar.aajunk.UrlParams;
 import org.json.JSONObject;
 
 import javax.ws.rs.core.MediaType;

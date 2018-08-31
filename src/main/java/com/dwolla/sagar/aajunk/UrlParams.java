@@ -1,4 +1,4 @@
-package com.dwolla.sagar.Objects;
+package com.dwolla.sagar.aajunk;
 
 public class UrlParams {
 

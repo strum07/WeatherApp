@@ -1,4 +1,4 @@
-package com.dwolla.sagar.Objects;
+package com.dwolla.sagar.aajunk;
 
 import org.json.JSONObject;
 import javax.ws.rs.core.MediaType;

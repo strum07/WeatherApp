@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 public class DriverProgram {
 
     public static void main(String[] args) throws IOException {
+        System.out.println("Start");
 
         String city = null;
 
@@ -25,7 +26,12 @@ public class DriverProgram {
 
             //pass the city to object 1 =
             TemperatureData temp;
-            WeatherApp myApp = new WeatherApp("City");
+            WeatherApp myApp = null;
+            try {
+                myApp = new WeatherApp(city);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             myApp.displayWeather();
         }
         System.out.println("End");

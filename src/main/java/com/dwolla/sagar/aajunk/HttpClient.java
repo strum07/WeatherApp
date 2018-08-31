@@ -1,4 +1,4 @@
-package com.dwolla.sagar.Objects;
+package com.dwolla.sagar.aajunk;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -8,7 +8,6 @@ public class HttpClient {
 
     private String url;
     private WebTarget target;
-
     private Client client = ClientBuilder.newClient();
 
     public WebTarget getTarget() {

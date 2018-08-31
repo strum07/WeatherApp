@@ -5,39 +5,29 @@ import com.dwolla.sagar.Weather.WeatherData;
 
 public class WeatherApp {
 
-    private WeatherData weatherdata;
+    private WeatherData myCityWeatherData = new WeatherData();
 
-    private String city;
+    private String myCity;
 
-    private GetWeatherClient myClient;
+    private String myCountryCode;
 
     public WeatherApp(String city) throws Exception {
-        this.city = city;
-        myClient = new GetWeatherClient(city);
-        this.weatherdata = myClient.;
+        this.myCity = city;
+        GetWeatherClient myClient = new GetWeatherClient(city);
+        this.myCityWeatherData.setTemperatureData(myClient.tempInKelvin());
+    }
+
+
+    public WeatherApp(String city, String countryCode) throws Exception {
+        this.myCity = city;
+        this.myCountryCode = countryCode;
+        GetWeatherClient myClient = new GetWeatherClient(city,countryCode);
+        this.myCityWeatherData.setTemperatureData(myClient.tempInKelvin());
     }
 
 
     public void displayWeather(){
-
-
-        System.out.println(weatherdata.getTemperatureData().getFahrenheit());
-
-
-        //Retrieve the key
-
-        // Set HTTP Client up
-
-        // Make the Call
-
-
-        //Extract the JSON for Weather
-
-        // Set WeatherData
+        System.out.println(myCity +" Weather:");
+        System.out.println(myCityWeatherData.getTemperatureData().getFahrenheit()+" degrees Fahrenheit"+"");
     }
-
-
-
-
-
 }
