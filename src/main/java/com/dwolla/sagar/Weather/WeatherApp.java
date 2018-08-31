@@ -1,4 +1,4 @@
-package com.dwolla.sagar;
+package com.dwolla.sagar.Weather;
 
 import com.dwolla.sagar.OWMClient.GetWeatherClient;
 import com.dwolla.sagar.Weather.WeatherData;

@@ -1,4 +1,4 @@
-package com.dwolla.sagar;
+package com.dwolla.sagar.aajunk;
 
 import com.dwolla.sagar.ApiKeyGen.ApiKey;
 import com.dwolla.sagar.Weather.TemperatureData;

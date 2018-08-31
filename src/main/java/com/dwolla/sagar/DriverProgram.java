@@ -1,6 +1,8 @@
 package com.dwolla.sagar;
 
 import com.dwolla.sagar.Weather.TemperatureData;
+import com.dwolla.sagar.Weather.WeatherApp;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
