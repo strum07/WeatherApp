@@ -26,6 +26,7 @@ public class ApiKey {
         return instance;
     }
 
+
     public String getKey() {
         return key;
     }
