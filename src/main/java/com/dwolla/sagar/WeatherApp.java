@@ -1,20 +1,16 @@
 package com.dwolla.sagar;
 
-
+import com.dwolla.sagar.Models.TemperatureData;
 import com.dwolla.sagar.Objects.*;
 import org.json.JSONObject;
 import com.dwolla.sagar.ApiKeyGen.ApiKey;
-
 import javax.ws.rs.core.MediaType;
 
 public class WeatherApp {
     public static void main(String[] args) throws Exception {
         ApiKey myKeyObject = ApiKey.getInstance();
-
         String apiKey = myKeyObject.getKey();
-
         System.out.println(apiKey);
-
         UrlParams myParams = new UrlParams();
 
         myParams.setCityName("Bangalore");
@@ -46,15 +42,17 @@ public class WeatherApp {
         GetResponse myResp = new GetResponse();
         myResp.setMyClient(myClient);
         myResp.getExtractedTemp();
+
         System.out.println("Extracted Temp");
         System.out.println(myResp.getExtractedTemp());
 
-
         //Temperature Class
-        Temperature myTemp = new Temperature();
+        TemperatureData myTemp = new TemperatureData();
         myTemp.setKelvin(myResp.getExtractedTemp());
+
         System.out.println("Celsius Temp");
         System.out.println(myTemp.getCelsius());
+
         System.out.println("Fahrenheit Temp");
         System.out.println(myTemp.getFahrenheit());
 

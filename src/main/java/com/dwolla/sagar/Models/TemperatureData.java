@@ -1,17 +1,19 @@
-package com.dwolla.sagar.Objects;
+package com.dwolla.sagar.Models;
 
-public class Temperature {
+public class TemperatureData extends WeatherData {
 
     private double kelvin;
     private double celsius;
     private double fahrenheit;
 
-    public double getKelvin() {
-        return kelvin;
-    }
 
     public void setKelvin(double kelvin) {
         this.kelvin = kelvin;
+    }
+
+
+    public double getKelvin() {
+        return kelvin;
     }
 
     public double getCelsius() {
@@ -23,5 +25,4 @@ public class Temperature {
         fahrenheit = 1.8*(kelvin-273)+32;
         return Math.round(fahrenheit * 100.0) / 100.0;
     }
-
 }
