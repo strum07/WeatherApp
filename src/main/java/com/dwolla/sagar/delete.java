@@ -9,9 +9,9 @@ public class delete {
     public static void main(String[] args) {
 
 
-        FormatInput demo = new FormatInput("Chicago USA");
+        FormatInput demo = new FormatInput("Chicago Us");
 
-        List<String> myList = demo.getFormattedInput();
+        List<String> myList = demo.getFormattedInputList();
 
         for(int i=0;i<myList.size();i++){
 

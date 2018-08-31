@@ -27,7 +27,7 @@ public class WeatherApp {
 
 
     public void displayWeather(){
-        if(myCountryCode.isEmpty()){
+        if(myCountryCode==null){
             System.out.println(myCity +" Weather:");
         }else{
             System.out.println(myCity +" "+myCountryCode+" Weather:");

@@ -20,6 +20,7 @@ public class GetWeatherClient {
     //Constructor
     public GetWeatherClient(String City) throws Exception {
         this.city = City;
+        this.countryCode = null;
     }
 
     public GetWeatherClient(String City,String CountryCode) throws Exception {
@@ -37,10 +38,9 @@ public class GetWeatherClient {
         setAPPID(apiKeyInstance);
         String targetUrl = "http://api.openweathermap.org/data/2.5/weather";
 
-        if(countryCode.isEmpty()){
+        if (countryCode == null) {
             return targetUrl +"?q="+city+"&APPID="+APPID;
-        }
-        else{
+        } else {
           return targetUrl +"?q="+city+","+countryCode+"&APPID="+APPID;
         }
     }

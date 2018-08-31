@@ -1,47 +1,63 @@
 package com.dwolla.sagar;
 
+import com.dwolla.sagar.Tokenizer.FormatInput;
 import com.dwolla.sagar.Weather.TemperatureData;
 import com.dwolla.sagar.Weather.WeatherApp;
+import com.dwolla.sagar.Weather.WeatherData;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class DriverProgram {
 
     public static void main(String[] args) throws IOException {
         System.out.println("Start");
 
-        String city = null;
+        String rawInput;
 
-        String country = null;
+        List<String> paramList;
+
+        FormatInput inputParams;
+
 
         System.out.println("Where are you?");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        city = reader.readLine();
-        System.out.println("Enter Country");
+        rawInput = reader.readLine();
 
-        country = reader.readLine();
+        if(rawInput.isEmpty()){
 
+            System.out.println("Nothing Entered! Please Try again!");
 
-        if(city.isEmpty()){
-            System.out.println(city);
-            System.out.println("Please enter a city and try again!");
-        } else{
-            System.out.println(city);
-            System.out.println("Not empty");
+        }else{
 
-            //pass the city to object 1 =
-            TemperatureData temp;
-            WeatherApp myApp = null;
-            try {
-                myApp = new WeatherApp(city,country);
-            } catch (Exception e) {
-                e.printStackTrace();
+            inputParams = new FormatInput(rawInput);
+
+            paramList = inputParams.getFormattedInputList();
+
+            if(paramList.size()==1){
+                WeatherApp myApp = null;
+                try {
+                    myApp = new WeatherApp(paramList.get(0));
+                    myApp.displayWeather();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else if(paramList.size()==2){
+                WeatherApp myApp = null;
+                try {
+                    myApp = new WeatherApp(paramList.get(0),paramList.get(1));
+                    myApp.displayWeather();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-            myApp.displayWeather();
+            else{
+                System.out.println("Invalid parameters!");
+            }
         }
         System.out.println("End");
     }
