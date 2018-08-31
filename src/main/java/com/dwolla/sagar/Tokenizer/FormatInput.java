@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class FormatInput {
 
     private String rawInput;
-    List<String> tokenList = new ArrayList<>();
+    private List<String> tokenList = new ArrayList<>();
     
     //Constructor
     public FormatInput(String rawInput) {
@@ -28,7 +28,7 @@ public class FormatInput {
 
     private String concatTokens(List<String> tokenList) {
 
-        String concat = new String();
+        String concat = "";
         for (String aTokenList : tokenList) {
             concat = concat + aTokenList;
         }
