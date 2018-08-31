@@ -39,7 +39,8 @@ public class GetWeatherClient {
 
         if(countryCode.isEmpty()){
             return targetUrl +"?q="+city+"&APPID="+APPID;
-        } else{
+        }
+        else{
           return targetUrl +"?q="+city+","+countryCode+"&APPID="+APPID;
         }
     }

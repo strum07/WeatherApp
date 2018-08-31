@@ -14,11 +14,18 @@ public class DriverProgram {
 
         String city = null;
 
+        String country = null;
+
         System.out.println("Where are you?");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         city = reader.readLine();
+        System.out.println("Enter Country");
+
+        country = reader.readLine();
+
+
         if(city.isEmpty()){
             System.out.println(city);
             System.out.println("Please enter a city and try again!");
@@ -30,7 +37,7 @@ public class DriverProgram {
             TemperatureData temp;
             WeatherApp myApp = null;
             try {
-                myApp = new WeatherApp(city);
+                myApp = new WeatherApp(city,country);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -10,13 +10,13 @@ public class ApiKey {
     private final String path = new File("src/main/java/environment/Key.txt").getAbsolutePath();
     private final String key = readFileAsString(path);
 
+    protected ApiKey() throws Exception {
+        // Exists only to stop instantiation. #SingletonPattern!
+    }
+
     private static String readFileAsString(String fileName)throws Exception
     {
         return new String(Files.readAllBytes(Paths.get(fileName)));
-    }
-
-    protected ApiKey() throws Exception {
-        // Exists only to defeat instantiation. #SingletonPattern!
     }
 
     public static ApiKey getInstance() throws Exception {
@@ -25,7 +25,6 @@ public class ApiKey {
         }
         return instance;
     }
-
 
     public String getKey() {
         return key;
