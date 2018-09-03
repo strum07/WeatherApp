@@ -2,7 +2,7 @@
 
 
 
-#Install Notes:
+# Install Notes:
 
 1. Clone the repo
 2. Import dependencies in the POM
