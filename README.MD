@@ -11,19 +11,19 @@
 
 
 # Required
-1. Please create a txt file in the path (src/main/java/environment) with only your key.
-2. Save the file.
+1. Please create a txt file in the path (src/main/java/environment) with only your key
+2. Save the file
 
 
 # Errors/ Exit Codes
-1. 404 : Location not found - Exit Status 1
-2. 500: Internal Sever Error - Exit Status 2
+1. Exit Status 1 - 404 : Location not found 
+2. Exit Status 2 - 500: Internal Sever Error 
 3. Exit status 3 - Any other Http error codes - Please try enter in the requested format
-4. Exit Status 4 - API file/Key not found. Please refer to note above.
-5. Exit Status 5 - Can't read key from file/Key invalid.
+4. Exit Status 4 - API file/Key not found. Please refer to note above
+5. Exit Status 5 - Can't read key from file/Key invalid
 
 
 
 Note:
 
-Test Cases - to Be added.
+Test Cases - to Be added. Apologies for not having spent enough time.
