@@ -6,17 +6,16 @@ import java.util.List;
 
 public class WeatherHelper {
 
-
     private String rawInput;
 
     public WeatherHelper(String rawInput) {
         this.rawInput = rawInput;
     }
 
-    public void serveWeather(){
+    public void reportWeather(){
         if(rawInput.isEmpty()){
 
-            System.out.println("Nothing Entered! Please Try again!");
+            System.out.println("Nothing Entered! Please enter location and try again!");
 
         }else{
 
@@ -41,10 +40,6 @@ public class WeatherHelper {
                     e.printStackTrace();
                 }
             }
-            else{
-                System.out.println("Invalid parameters!");
-            }
         }
     }
-
 }

@@ -1,7 +1,6 @@
 package com.dwolla.sagar;
 
 import com.dwolla.sagar.Weather.WeatherHelper;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,6 +20,6 @@ public class DriverProgram {
 
         weatherMan = new WeatherHelper(rawInput);
 
-        weatherMan.serveWeather();
+        weatherMan.reportWeather();
     }
 }

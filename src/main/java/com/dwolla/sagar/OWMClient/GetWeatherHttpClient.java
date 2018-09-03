@@ -9,6 +9,8 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.math.BigDecimal;
 
+import static java.lang.System.exit;
+
 public class GetWeatherHttpClient {
 
     private ApiKey apiKeyInstance = ApiKey.getInstance();
@@ -18,12 +20,12 @@ public class GetWeatherHttpClient {
 
 
     //Constructor
-    public GetWeatherHttpClient(String City) throws Exception {
+    public GetWeatherHttpClient(String City){
         this.city = City;
         this.countryCode = null;
     }
 
-    public GetWeatherHttpClient(String City, String CountryCode) throws Exception {
+    public GetWeatherHttpClient(String City, String CountryCode){
         this.city = City;
         this.countryCode = CountryCode;
     }
@@ -50,7 +52,26 @@ public class GetWeatherHttpClient {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(getPrepUrl());
 
-        return target.request(MediaType.APPLICATION_JSON).get(String.class);
+        String responseString = null;
+
+        int httpStatusCode = target.request(MediaType.APPLICATION_JSON).get().getStatus();
+
+        if(httpStatusCode==200){
+            return target.request(MediaType.APPLICATION_JSON).get(String.class);
+
+        }else if(httpStatusCode == 404){
+            System.out.println("Location not found! "+httpStatusCode);
+            exit(1);
+        }else if(httpStatusCode == 500){
+            System.out.println("Internal Server Error. Please try again!");
+            exit(2);
+        }
+
+        System.out.println("Please reset the key or enter the right key in the file! "+httpStatusCode);
+        exit(3);
+        return  responseString;
+
+
     }
 
     private double extractTemperature(String responseString){

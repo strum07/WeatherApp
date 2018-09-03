@@ -11,14 +11,19 @@ public class WeatherService {
 
     private String myCountryCode;
 
-    public WeatherService(String city) throws Exception {
+    public WeatherService(String city)  {
         this.myCity = city;
-        GetWeatherHttpClient myClient = new GetWeatherHttpClient(city);
-        this.myCityWeatherData.setTemperatureData(myClient.tempInKelvin());
+        GetWeatherHttpClient myClient = null;
+        try {
+            myClient = new GetWeatherHttpClient(city);
+            this.myCityWeatherData.setTemperatureData(myClient.tempInKelvin());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
-    public WeatherService(String city, String countryCode) throws Exception {
+    public WeatherService(String city, String countryCode){
         this.myCity = city;
         this.myCountryCode = countryCode;
         GetWeatherHttpClient myClient = new GetWeatherHttpClient(city,countryCode);

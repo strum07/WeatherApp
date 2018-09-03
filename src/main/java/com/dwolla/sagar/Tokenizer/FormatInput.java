@@ -18,7 +18,7 @@ public class FormatInput {
 
     private List<String> getTokens(String str) {
         List<String> tokens = new ArrayList<>();
-        StringTokenizer tokenizer = new StringTokenizer(str, " ,./");
+        StringTokenizer tokenizer = new StringTokenizer(str, " ,./;");
         while (tokenizer.hasMoreElements()) {
             tokens.add(tokenizer.nextToken().toLowerCase());
         }
