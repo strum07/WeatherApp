@@ -22,3 +22,8 @@
 4. Exit Status 4 - API file/Key not found. Please refer to note above.
 5. Exit Status 5 - Can't read key from file/Key invalid.
 
+
+
+Note:
+
+Test Cases - to Be added.
