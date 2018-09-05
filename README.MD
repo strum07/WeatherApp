@@ -15,10 +15,10 @@
 2. Save the file
 
 # Input Format
-Template: {{City Name}}{{Delimiter}}{{Two Letter Country Code}}
-Valid Country Codes: 2-letter ISO 3166 country codes
-Valid City Names: Any of the 200,000 cities served by openweathermap.org
-Valid Deimiters: Space( ), Comma(,), Dot(.), Forward Slash(/), Semi Colon(;)
+1. Template: {{City Name}}{{Delimiter}}{{Two Letter Country Code}}
+2. Valid Country Codes: 2-letter ISO 3166 country codes
+3. Valid City Names: Any of the 200,000 cities served by openweathermap.org
+4. Valid Deimiters: Space( ), Comma(,), Dot(.), Forward Slash(/), Semi Colon(;)
 
 Note: Do not worry about the case - Its not case sensitive.
 
