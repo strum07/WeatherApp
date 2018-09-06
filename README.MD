@@ -11,7 +11,7 @@
 
 
 # Required
-1. Please create a txt file in the path (src/main/java/environment) with only your key
+1. Please create a txt file in the path (src/main/java/environment) with only your key - File name: Key.txt
 2. Save the file
 
 # Input Format
