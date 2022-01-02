@@ -1,6 +1,6 @@
-package com.dwolla.sagar.OWMClient;
+package com.dwolla.sagar.owmclient;
 
-import com.dwolla.sagar.ApiKeyGen.ApiKey;
+import com.dwolla.sagar.keymanagement.ApiKey;
 import org.json.JSONObject;
 
 import javax.ws.rs.client.Client;
@@ -11,39 +11,30 @@ import java.math.BigDecimal;
 
 import static java.lang.System.exit;
 
-public class GetWeatherHttpClient {
+public class WeatherClient {
 
-    private ApiKey apiKeyInstance = ApiKey.getInstance();
-    private String APPID;
-    private String city;
-    private String countryCode;
-
+    private final String city;
+    private final String countryCode;
 
     //Constructor
-    public GetWeatherHttpClient(String City){
-        this.city = City;
+    public WeatherClient(String city){
+        this.city = city;
         this.countryCode = null;
     }
 
-    public GetWeatherHttpClient(String City, String CountryCode){
-        this.city = City;
-        this.countryCode = CountryCode;
-    }
-
-
-
-    private void setAPPID(ApiKey apiKeyInstance) {
-        this.APPID = apiKeyInstance.getKey();
+    public WeatherClient(String city, String countryCode){
+        this.city = city;
+        this.countryCode = countryCode;
     }
 
     private String getPrepUrl(){
-        setAPPID(apiKeyInstance);
+        String appid = ApiKey.getApiKey();
         String targetUrl = "http://api.openweathermap.org/data/2.5/weather";
 
         if (countryCode == null) {
-            return targetUrl +"?q="+city+"&APPID="+APPID;
+            return targetUrl +"?q="+city+"&APPID="+ appid;
         } else {
-          return targetUrl +"?q="+city+","+countryCode+"&APPID="+APPID;
+          return targetUrl +"?q="+city+","+countryCode+"&APPID="+ appid;
         }
     }
 
@@ -85,6 +76,4 @@ public class GetWeatherHttpClient {
     public double tempInKelvin(){
         return extractTemperature(getResponseString());
     }
-
-
 }

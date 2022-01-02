@@ -1,7 +1,7 @@
-package com.dwolla.sagar.Weather;
+package com.dwolla.sagar.weather;
 
-import com.dwolla.sagar.OWMClient.GetWeatherHttpClient;
-import com.dwolla.sagar.Weather.DataStructure.WeatherData;
+import com.dwolla.sagar.owmclient.WeatherClient;
+import com.dwolla.sagar.weather.datastructure.WeatherData;
 
 public class WeatherService {
 
@@ -13,9 +13,9 @@ public class WeatherService {
 
     public WeatherService(String city)  {
         this.myCity = city;
-        GetWeatherHttpClient myClient = null;
+        WeatherClient myClient;
         try {
-            myClient = new GetWeatherHttpClient(city);
+            myClient = new WeatherClient(city);
             this.myCityWeatherData.setTemperatureData(myClient.tempInKelvin());
         } catch (Exception e) {
             e.printStackTrace();
@@ -26,7 +26,7 @@ public class WeatherService {
     public WeatherService(String city, String countryCode){
         this.myCity = city;
         this.myCountryCode = countryCode;
-        GetWeatherHttpClient myClient = new GetWeatherHttpClient(city,countryCode);
+        WeatherClient myClient = new WeatherClient(city,countryCode);
         this.myCityWeatherData.setTemperatureData(myClient.tempInKelvin());
     }
 

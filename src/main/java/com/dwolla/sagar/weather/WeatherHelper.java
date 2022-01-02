@@ -1,38 +1,36 @@
-package com.dwolla.sagar.Weather;
+package com.dwolla.sagar.weather;
 
-import com.dwolla.sagar.Tokenizer.FormatInput;
+import com.dwolla.sagar.tokenizer.FormatInput;
 
 import java.util.List;
 
 public class WeatherHelper {
 
-    private String rawInput;
+    private final String rawInput;
 
     public WeatherHelper(String rawInput) {
         this.rawInput = rawInput;
     }
 
-    public void reportWeather(){
-        if(rawInput.isEmpty()){
+    public void reportWeather() {
+        if (rawInput.isEmpty()) {
 
             System.out.println("Nothing Entered! Please enter location and try again!");
 
-        }else{
+        } else {
 
-            FormatInput inputParams = new FormatInput(rawInput);
+            List<String> paramList = FormatInput.getFormattedInputList(rawInput);
 
-            List<String> paramList = inputParams.getFormattedInputList();
-
-            if(paramList.size()==1){
-                WeatherService myApp = null;
+            if (paramList.size() == 1) {
+                WeatherService myApp;
                 try {
                     myApp = new WeatherService(paramList.get(0));
                     myApp.displayWeather();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }else if(paramList.size()==2){
-                WeatherService myApp = null;
+            } else if (paramList.size() == 2) {
+                WeatherService myApp;
                 try {
                     myApp = new WeatherService(paramList.get(0), paramList.get(1));
                     myApp.displayWeather();

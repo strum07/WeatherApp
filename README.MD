@@ -20,7 +20,7 @@ Template: {{City Name}}{{Delimiter}}{{Two Letter Country Code}}
 2. Valid City Names: Any of the 200,000 cities served by openweathermap.org
 3. Valid Delimiters: Space( ), Comma(,), Dot(.), Forward Slash(/), Semi Colon(;)
 
-Note: Do not worry about the case - Its not case sensitive.
+Note: Do not worry about the case - It's not case-sensitive.
 
 
 # Errors/ Exit Codes
